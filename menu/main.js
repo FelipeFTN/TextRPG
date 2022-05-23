@@ -25,20 +25,22 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.titleScreen = exports.titleScreenSelector = void 0;
 const process_1 = require("process"); // npm install @types/node
-const readline = __importStar(require("readline"));
 const displays_1 = require("./displays");
+const main_1 = require("../main");
+const readline = __importStar(require("readline"));
 function titleScreenSelector() {
     const rl = readline.createInterface({ input: process_1.stdin, output: process_1.stdout });
     const answer = rl.question("> ", (answer) => {
         let option = answer.toLowerCase();
         if (option == "play") {
             rl.close();
+            (0, main_1.startGame)();
         }
         else if (option == "help") {
             rl.close();
             (0, displays_1.help)();
         }
-        else if (option == "ok") {
+        else if (option == "ok" || option == "") {
             rl.close();
             titleScreen();
         }

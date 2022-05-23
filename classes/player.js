@@ -7,6 +7,8 @@ class playerClass {
         this.hp = 0;
         this.mp = 0;
         this.status = [];
+        this.location = 'start';
+        this.position = 'b2';
     }
 }
 exports.playerClass = playerClass;
