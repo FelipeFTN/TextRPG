@@ -19,6 +19,7 @@ let player = new player_1.playerClass();
 (0, main_1.titleScreen)();
 function startGame() {
     return __awaiter(this, void 0, void 0, function* () {
+        console.log("Development...");
         const option = yield (0, prompt_1.prompt)("What would you like to do?");
         if (["move", "go", "travel", "walk"].includes(option)) {
             player.move(option);
