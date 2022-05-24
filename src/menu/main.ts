@@ -1,18 +1,14 @@
-import { stdin as input, stdout as output } from 'process'; // npm install @types/node
 import { title, help } from './displays';
-import { startGame } from '../main'
-import * as readline from 'readline';
+import { prompt } from '../utils/prompt';
+import { startGame } from '../main';
 
-export function titleScreenSelector(): void {
-    const rl = readline.createInterface({ input, output });
+export const titleScreenSelector = async (): Promise<void> => {
+    const option: any = await prompt().then(answer => answer.toLowerCase());
 
-    const answer: any = rl.question("> ", (answer) => {
-        let option: string = answer.toLowerCase();
-        if (option == "play") { rl.close(); startGame(); }
-        else if (option == "help") { rl.close(); help(); }
-        else if (option == "ok" || option == "") { rl.close(); titleScreen(); }
-        else { process.exit(1); }
-    });
+    if (option == "play") { startGame(); }
+    else if (option == "help") { help(); }
+    else if (option == "ok" || option == "") { titleScreen(); }
+    else { process.exit(1); }
 }
 
 export function titleScreen() { title(); }
