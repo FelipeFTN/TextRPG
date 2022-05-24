@@ -17,6 +17,6 @@ export async function startGame(): Promise<void> {
 
     if (["move", "go", "travel", "walk"].includes(option)) { player.move(option); }
     else if (["examine", "inspect", " interact", "look"].includes(option)) { player.interact(option); }
-    else if (["quit", "exit"].includes(option)) { process.exit(1); }
+    else if (["quit", "exit", "leave", "left"].includes(option)) { process.exit(1); }
     else { prompt("What would you like to do??"); }
 }
