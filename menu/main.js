@@ -13,21 +13,23 @@ exports.titleScreen = exports.titleScreenSelector = void 0;
 const displays_1 = require("./displays");
 const prompt_1 = require("../utils/prompt");
 const main_1 = require("../main");
-const titleScreenSelector = () => __awaiter(void 0, void 0, void 0, function* () {
-    const option = yield (0, prompt_1.prompt)().then(answer => answer.toLowerCase());
-    if (option == "play") {
-        (0, main_1.startGame)();
-    }
-    else if (option == "help") {
-        (0, displays_1.help)();
-    }
-    else if (option == "ok" || option == "") {
-        titleScreen();
-    }
-    else {
-        process.exit(1);
-    }
-});
+function titleScreenSelector() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const option = yield (0, prompt_1.prompt)();
+        if (option == "play") {
+            (0, main_1.startGame)();
+        }
+        else if (option == "help") {
+            (0, displays_1.help)();
+        }
+        else if (option == "ok" || option == "") {
+            titleScreen();
+        }
+        else {
+            process.exit(1);
+        }
+    });
+}
 exports.titleScreenSelector = titleScreenSelector;
 function titleScreen() { (0, displays_1.title)(); }
 exports.titleScreen = titleScreen;

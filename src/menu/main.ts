@@ -2,8 +2,8 @@ import { title, help } from './displays';
 import { prompt } from '../utils/prompt';
 import { startGame } from '../main';
 
-export const titleScreenSelector = async (): Promise<void> => {
-    const option: any = await prompt().then(answer => answer.toLowerCase());
+export async function titleScreenSelector() {
+    const option: any = await prompt();
 
     if (option == "play") { startGame(); }
     else if (option == "help") { help(); }

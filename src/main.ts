@@ -10,11 +10,10 @@ let player: playerClass = new playerClass();
 
 titleScreen();
 
-export const startGame = async (): Promise<void> => {
-    showMap(player);
+export async function startGame(): Promise<void> {
+    console.log("Development...")
 
-    const option: any = await prompt("What would you like to do?")
-    .then(answer => answer.toLowerCase());
+    const option: any = await prompt("What would you like to do?");
 
     if (["move", "go", "travel", "walk"].includes(option)) { player.move(option); }
     else if (["examine", "inspect", " interact", "look"].includes(option)) { player.interact(option); }

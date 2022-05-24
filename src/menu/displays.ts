@@ -1,6 +1,6 @@
 import { titleScreenSelector } from "./main"
 
-export function help(): void {
+export async function help(): Promise<void> {
     process.stdout.write('\u001B[2J\u001B[0;0f')
     console.log('                                 ')    
     console.log('#################################')    
@@ -14,10 +14,10 @@ export function help(): void {
     console.log('             - Ok -              ')    
     console.log('                                 ')    
     console.log('    Copyright 2022 FelipeFTN     ')    
-    titleScreenSelector();
+    await titleScreenSelector();
 
 }
-export function title(): void {
+export async function title(): Promise<void> {
     process.stdout.write('\u001B[2J\u001B[0;0f')
     console.log('                                ')    
     console.log('################################')    
@@ -27,5 +27,5 @@ export function title(): void {
     console.log('            - Help -            ')    
     console.log('            - Quit -            ')    
     console.log('    Copyright 2022 FelipeFTN    ')    
-    titleScreenSelector();
+    await titleScreenSelector();
 }

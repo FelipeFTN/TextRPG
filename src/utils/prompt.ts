@@ -1,19 +1,10 @@
-import { stdin as input, stdout as output } from 'process'; // npm install @types/node
-import * as readline from 'readline';
+import { stdin as input, stdout as output } from 'process';
+const readline = require('readline').createInterface({ input, output });
 
-export const prompt = async (question: string = ""): Promise<string> => {
-    console.log(question)
-
-    const rl = readline.createInterface({ input, output });
-
-    // const answer: any = rl.question("> ", async (answer) => {
-    //     const option: string = answer.toLowerCase();
-    //     console.log("option: ", option);
-    //     return option;
-    // });
-
-    // return answer;
-
-    return new Promise<string>(resolve => rl.question("> ", resolve)).finally(() => rl.close());
-
+export async function prompt(question: string = "> "): Promise<string> {
+    return new Promise((resolve) => {
+        readline.question(question, (answer: string) => {
+            resolve(answer);
+        });
+    })
 }
