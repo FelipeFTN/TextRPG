@@ -9,12 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.title = exports.help = void 0;
+exports.createCharacter = exports.title = exports.help = void 0;
 const main_1 = require("./main");
 function help() {
     return __awaiter(this, void 0, void 0, function* () {
         process.stdout.write('\u001B[2J\u001B[0;0f');
-        console.log('                                 ');
         console.log('#################################');
         console.log('#    Welcome to the Text RPG    #');
         console.log('#################################');
@@ -33,7 +32,6 @@ exports.help = help;
 function title() {
     return __awaiter(this, void 0, void 0, function* () {
         process.stdout.write('\u001B[2J\u001B[0;0f');
-        console.log('                                ');
         console.log('################################');
         console.log('#    Welcome to the Text RPG   #');
         console.log('################################');
@@ -45,3 +43,17 @@ function title() {
     });
 }
 exports.title = title;
+function createCharacter() {
+    return __awaiter(this, void 0, void 0, function* () {
+        process.stdout.write('\u001B[2J\u001B[0;0f');
+        console.log('################################');
+        console.log('          - Barbarian -         ');
+        console.log('           - Assassin -         ');
+        console.log('           - Warrior -          ');
+        console.log('           - Archer -           ');
+        console.log('           - Cleric -           ');
+        console.log('           - Thief -            ');
+        console.log('            - Mage -            ');
+    });
+}
+exports.createCharacter = createCharacter;

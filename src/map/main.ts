@@ -1,13 +1,13 @@
 import mapZones from './map'
-import { playerClass } from '../classes/player'
+import { PlayerClass } from '../classes/player'
 
-export function showMap(player: playerClass): void {
-    console.log('\n' + ("#".repeat(1.9 * player.getPlayersLocation().length)))
-    console.log(`# ${player.getPlayersPosition()} #`)
+export function showMap(player: PlayerClass): void {
+    console.log('\n' + ("#".repeat(1.9 * player.getPlayerLocation().length)))
+    console.log(`# ${player.getPlayerPosition()} #`)
     mapZones.forEach(function (zone) {
-        if (zone.ZONECODE == player.getPlayersLocation()) {
+        if (zone.ZONECODE == player.getPlayerLocation()) {
             console.log(`# ${zone.ZONENAME} #`)
         }
     })
-    console.log('\n' + ("#".repeat(4 * player.getPlayersLocation().length)))
+    console.log('\n' + ("#".repeat(4 * player.getPlayerLocation().length)))
 }

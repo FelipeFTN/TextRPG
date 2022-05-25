@@ -27,3 +27,15 @@ export async function title(): Promise<void> {
     console.log('    Copyright 2022 FelipeFTN    ');
     await titleScreenSelector();
 }
+
+export async function createCharacter(): Promise<void> {
+    process.stdout.write('\u001B[2J\u001B[0;0f');
+    console.log('################################');
+    console.log('          - Barbarian -         ');
+    console.log('           - Assassin -         ');
+    console.log('           - Warrior -          ');
+    console.log('           - Archer -           ');
+    console.log('           - Cleric -           ');
+    console.log('           - Thief -            ');
+    console.log('            - Mage -            ');
+}
