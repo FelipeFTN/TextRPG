@@ -27,12 +27,13 @@ function startGame() {
         else if (["examine", "inspect", " interact", "look"].includes(option)) {
             player.interact(option);
         }
-        else if (["quit", "exit"].includes(option)) {
+        else if (["quit", "exit", "leave", "left"].includes(option)) {
             process.exit(1);
         }
         else {
-            (0, prompt_1.prompt)("What would you like to do??");
+            yield (0, prompt_1.prompt)("What would you like to do??");
         }
+        process.exit(1);
     });
 }
 exports.startGame = startGame;
