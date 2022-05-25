@@ -7,6 +7,6 @@ First of all, you need to install all typescript dependencies by running `npm in
 
 After installing all dependencies you can compile the Typescript code into Javascript by running `tsc`. This will compile all typescript files within _src_ directory into _root_ directory.
 
-Now, you may run `node main` in order to start the game.
+Now, you may run `node ./bin/main.js` in order to start the game.
 
 > We are working to create a simple executable release ou shell script to make it easier!
