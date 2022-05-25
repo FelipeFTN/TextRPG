@@ -20,19 +20,18 @@ export async function startGame(): Promise<void> {
     player.setPlayerName(playerName.trim());
 
     createCharacter();
-    let playerClass: string = await prompt("Choose a class: ");
-    while (!Classes.includes(playerClass.trim().toLowerCase())) { playerClass = await prompt("Choose a class: "); }
+    let playerClass: string = await (await prompt("Choose a class: ")).trim().toLowerCase();
+    while (!Classes.includes(playerClass.trim().toLowerCase())) { playerClass = await (await prompt("Choose a class: ")).trim().toLowerCase(); }
     AssignClass(player, playerClass);
 
-    console.log(player.getPlayerCombatInfo())
-    console.log("Development...")
+    console.log(`Hello ${player.getPlayerName()}, the ${player.getPlayerClass()}`);
 
-    const option: any = await (await prompt("What would you like to do? ")).trim();
+    // const option: any = await (await prompt("What would you like to do? ")).trim();
 
-    if (["move", "go", "travel", "walk"].includes(option)) { player.move(option); }
-    else if (["examine", "inspect", " interact", "look"].includes(option)) { player.interact(option); }
-    else if (["quit", "exit", "leave", "left"].includes(option)) { process.exit(1); }
-    else { await prompt("What would you like to do?? "); }
+    // if (["move", "go", "travel", "walk"].includes(option)) { player.move(option); }
+    // else if (["examine", "inspect", " interact", "look"].includes(option)) { player.interact(option); }
+    // else if (["quit", "exit", "leave", "left"].includes(option)) { process.exit(1); }
+    // else { await prompt("What would you like to do?? "); }
 
     process.exit(1);
 }

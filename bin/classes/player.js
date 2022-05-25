@@ -19,7 +19,6 @@ class PlayerClass {
     getPlayerCombatInfo() { return { "hp": this.hp, "mp": this.mp, "attack": this.attack }; }
     setPlayerName(value) { this.name = value; }
     setPlayerClass(value) {
-        console.log(`class name`);
         this.class = value.name;
         this.hp = value.hp;
         this.mp = value.mp;

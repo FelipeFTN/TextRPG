@@ -27,7 +27,6 @@ export class PlayerClass {
 
     public setPlayerName(value: string): void { this.name = value; }
     public setPlayerClass(value: any): void {
-        console.log(`class name`);
         this.class = value.name;
         this.hp = value.hp;
         this.mp = value.mp;

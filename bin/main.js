@@ -25,26 +25,17 @@ function startGame() {
         const playerName = yield (0, prompt_1.prompt)("Character's name: ");
         player.setPlayerName(playerName.trim());
         (0, displays_1.createCharacter)();
-        let playerClass = yield (0, prompt_1.prompt)("Choose a class: ");
+        let playerClass = yield (yield (0, prompt_1.prompt)("Choose a class: ")).trim().toLowerCase();
         while (!classes_1.Classes.includes(playerClass.trim().toLowerCase())) {
-            playerClass = yield (0, prompt_1.prompt)("Choose a class: ");
+            playerClass = yield (yield (0, prompt_1.prompt)("Choose a class: ")).trim().toLowerCase();
         }
         (0, classes_1.AssignClass)(player, playerClass);
-        console.log(player.getPlayerCombatInfo());
-        console.log("Development...");
-        const option = yield (yield (0, prompt_1.prompt)("What would you like to do? ")).trim();
-        if (["move", "go", "travel", "walk"].includes(option)) {
-            player.move(option);
-        }
-        else if (["examine", "inspect", " interact", "look"].includes(option)) {
-            player.interact(option);
-        }
-        else if (["quit", "exit", "leave", "left"].includes(option)) {
-            process.exit(1);
-        }
-        else {
-            yield (0, prompt_1.prompt)("What would you like to do?? ");
-        }
+        console.log(`Hello ${player.getPlayerName()}, the ${player.getPlayerClass()}`);
+        // const option: any = await (await prompt("What would you like to do? ")).trim();
+        // if (["move", "go", "travel", "walk"].includes(option)) { player.move(option); }
+        // else if (["examine", "inspect", " interact", "look"].includes(option)) { player.interact(option); }
+        // else if (["quit", "exit", "leave", "left"].includes(option)) { process.exit(1); }
+        // else { await prompt("What would you like to do?? "); }
         process.exit(1);
     });
 }
