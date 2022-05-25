@@ -1,6 +1,3 @@
-import { throws } from "assert";
-import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
-
 export class PlayerClass {
     private name: string;
     private hp: number;
@@ -22,11 +19,15 @@ export class PlayerClass {
         this.position = "b2";
     }
 
+    public getPlayerName(): string { return this.name; }
+    public getPlayerClass(): string { return this.class; }
     public getPlayerLocation(): string { return this.location; }
     public getPlayerPosition(): string { return this.position; }
+    public getPlayerCombatInfo(): any { return { "hp": this.hp, "mp": this.mp, "attack": this.attack }; }
 
     public setPlayerName(value: string): void { this.name = value; }
     public setPlayerClass(value: any): void {
+        console.log(`class name`);
         this.class = value.name;
         this.hp = value.hp;
         this.mp = value.mp;

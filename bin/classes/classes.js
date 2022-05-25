@@ -1,6 +1,37 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Mage = exports.Thief = exports.Cleric = exports.Archer = exports.Warrior = exports.Assassin = exports.Barbarian = exports.Classes = void 0;
+exports.Mage = exports.Thief = exports.Cleric = exports.Archer = exports.Warrior = exports.Assassin = exports.Barbarian = exports.Classes = exports.AssignClass = void 0;
+function AssignClass(player, playerClass) {
+    if (playerClass == "barbarian") {
+        player.setPlayerClass(new Barbarian);
+        return;
+    }
+    if (playerClass == "assassin") {
+        player.setPlayerClass(new Assassin);
+        return;
+    }
+    if (playerClass == "warrior") {
+        player.setPlayerClass(new Warrior);
+        return;
+    }
+    if (playerClass == "archer") {
+        player.setPlayerClass(new Archer);
+        return;
+    }
+    if (playerClass == "cleric") {
+        player.setPlayerClass(new Cleric);
+        return;
+    }
+    if (playerClass == "thief") {
+        player.setPlayerClass(new Thief);
+        return;
+    }
+    if (playerClass == "mage") {
+        player.setPlayerClass(new Mage);
+        return;
+    }
+}
+exports.AssignClass = AssignClass;
 exports.Classes = [
     "barbarian",
     "assassin",

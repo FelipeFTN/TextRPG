@@ -17,7 +17,7 @@ const displays_1 = require("./menu/displays");
 const player_1 = require("./classes/player");
 const main_1 = require("./menu/main");
 const prompt_1 = require("./utils/prompt");
-let player = new player_1.PlayerClass();
+const player = new player_1.PlayerClass();
 (0, main_1.titleScreen)();
 function startGame() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -29,9 +29,10 @@ function startGame() {
         while (!classes_1.Classes.includes(playerClass.trim().toLowerCase())) {
             playerClass = yield (0, prompt_1.prompt)("Choose a class: ");
         }
-        console.log(playerClass);
+        (0, classes_1.AssignClass)(player, playerClass);
+        console.log(player.getPlayerCombatInfo());
         console.log("Development...");
-        const option = yield (0, prompt_1.prompt)("What would you like to do?");
+        const option = yield (yield (0, prompt_1.prompt)("What would you like to do? ")).trim();
         if (["move", "go", "travel", "walk"].includes(option)) {
             player.move(option);
         }
@@ -42,7 +43,7 @@ function startGame() {
             process.exit(1);
         }
         else {
-            yield (0, prompt_1.prompt)("What would you like to do??");
+            yield (0, prompt_1.prompt)("What would you like to do?? ");
         }
         process.exit(1);
     });
