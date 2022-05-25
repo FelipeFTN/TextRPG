@@ -1,7 +1,7 @@
 // Typescript Text RPG
 // No Name Yet :D
 
-import { AssignClass, Classes, Barbarian, Assassin, Warrior, Archer, Cleric, Thief, Mage } from './classes/classes';
+import { AssignClass, Classes } from './classes/classes';
 import { createCharacter } from './menu/displays';
 import { PlayerClass } from './classes/player';
 import { titleScreen } from './menu/main';
@@ -13,8 +13,6 @@ const player: PlayerClass = new PlayerClass();
 titleScreen();
 
 export async function startGame(): Promise<void> {
-
-    // Create Character
 
     const playerName: string = await prompt("Character's name: ");
     player.setPlayerName(playerName.trim());
