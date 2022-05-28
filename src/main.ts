@@ -19,7 +19,7 @@ export async function startGame(): Promise<void> {
 
     createCharacter();
     let playerClass: string = (await prompt("Choose a class: ")).trim().toLowerCase();
-    while (!Classes.includes(playerClass.trim().toLowerCase())) { playerClass = await (await prompt("Choose a class: ")).trim().toLowerCase(); }
+    while (!Classes.includes(playerClass.trim().toLowerCase())) { playerClass = (await prompt("Choose a class: ")).trim().toLowerCase(); }
     AssignClass(player, playerClass);
 
     console.log(`Hello ${player.getPlayerName()}, the ${player.getPlayerClass()}`);

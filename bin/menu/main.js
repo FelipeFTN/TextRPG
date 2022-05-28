@@ -9,10 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.titleScreen = exports.titleScreenSelector = void 0;
+exports.titleScreen = exports.languageSelector = exports.titleScreenSelector = exports.gameLanguage = void 0;
 const displays_1 = require("./displays");
 const prompt_1 = require("../utils/prompt");
 const main_1 = require("../main");
+exports.gameLanguage = "";
 function titleScreenSelector() {
     return __awaiter(this, void 0, void 0, function* () {
         const option = yield (0, prompt_1.prompt)();
@@ -20,7 +21,7 @@ function titleScreenSelector() {
             (0, main_1.startGame)();
         }
         else if (option == "help") {
-            (0, displays_1.help)();
+            (0, displays_1.helpDisplay)();
         }
         else if (option == "ok" || option == "") {
             titleScreen();
@@ -31,5 +32,25 @@ function titleScreenSelector() {
     });
 }
 exports.titleScreenSelector = titleScreenSelector;
-function titleScreen() { (0, displays_1.title)(); }
+function languageSelector() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const option = (yield (0, prompt_1.prompt)()).trim().toLowerCase();
+        if (["english", "en", "ingles", "inglês"].includes(option)) {
+            exports.gameLanguage = "english";
+        }
+        else if (["portuguese", "portugues", "pt", "português"].includes(option)) {
+            exports.gameLanguage = "portuguese";
+        }
+        else {
+            process.exit(1);
+        }
+    });
+}
+exports.languageSelector = languageSelector;
+function titleScreen() {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield (0, displays_1.languageDisplay)();
+        yield (0, displays_1.titleDisplay)();
+    });
+}
 exports.titleScreen = titleScreen;

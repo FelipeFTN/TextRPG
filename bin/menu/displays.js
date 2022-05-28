@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createCharacter = exports.title = exports.help = void 0;
+exports.createCharacter = exports.languageDisplay = exports.titleDisplay = exports.helpDisplay = void 0;
 const main_1 = require("./main");
-function help() {
+function helpDisplay() {
     return __awaiter(this, void 0, void 0, function* () {
         process.stdout.write('\u001B[2J\u001B[0;0f');
         console.log('#################################');
@@ -28,8 +28,8 @@ function help() {
         yield (0, main_1.titleScreenSelector)();
     });
 }
-exports.help = help;
-function title() {
+exports.helpDisplay = helpDisplay;
+function titleDisplay() {
     return __awaiter(this, void 0, void 0, function* () {
         process.stdout.write('\u001B[2J\u001B[0;0f');
         console.log('################################');
@@ -42,7 +42,21 @@ function title() {
         yield (0, main_1.titleScreenSelector)();
     });
 }
-exports.title = title;
+exports.titleDisplay = titleDisplay;
+function languageDisplay() {
+    return __awaiter(this, void 0, void 0, function* () {
+        process.stdout.write('\u001B[2J\u001B[0;0f');
+        console.log('################################');
+        console.log('#            Language          #');
+        console.log('################################');
+        console.log('           - English -          ');
+        console.log('          - Portuguese -        ');
+        console.log('                                ');
+        console.log('    Copyright 2022 FelipeFTN    ');
+        yield (0, main_1.languageSelector)();
+    });
+}
+exports.languageDisplay = languageDisplay;
 function createCharacter() {
     return __awaiter(this, void 0, void 0, function* () {
         process.stdout.write('\u001B[2J\u001B[0;0f');

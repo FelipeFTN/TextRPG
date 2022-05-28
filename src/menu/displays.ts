@@ -1,6 +1,6 @@
-import { titleScreenSelector } from "./main"
+import { titleScreenSelector, languageSelector } from "./main"
 
-export async function help(): Promise<void> {
+export async function helpDisplay(): Promise<void> {
     process.stdout.write('\u001B[2J\u001B[0;0f');
     console.log('#################################');
     console.log('#    Welcome to the Text RPG    #');   
@@ -16,7 +16,7 @@ export async function help(): Promise<void> {
     await titleScreenSelector();
 
 }
-export async function title(): Promise<void> {
+export async function titleDisplay(): Promise<void> {
     process.stdout.write('\u001B[2J\u001B[0;0f');
     console.log('################################');
     console.log('#    Welcome to the Text RPG   #');
@@ -26,6 +26,17 @@ export async function title(): Promise<void> {
     console.log('            - Quit -            ');
     console.log('    Copyright 2022 FelipeFTN    ');
     await titleScreenSelector();
+}
+export async function languageDisplay(): Promise<void> {
+    process.stdout.write('\u001B[2J\u001B[0;0f');
+    console.log('################################');
+    console.log('#            Language          #');
+    console.log('################################');
+    console.log('           - English -          ');
+    console.log('          - Portuguese -        ');
+    console.log('                                ');
+    console.log('    Copyright 2022 FelipeFTN    ');
+    await languageSelector();
 }
 
 export async function createCharacter(): Promise<void> {
