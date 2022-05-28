@@ -17,11 +17,11 @@ exports.gameLanguage = "";
 function titleScreenSelector() {
     return __awaiter(this, void 0, void 0, function* () {
         const option = yield (0, prompt_1.prompt)();
-        if (option == "play") {
+        if (option == "play" || option == "jogar") {
             (0, main_1.startGame)();
         }
-        else if (option == "help") {
-            (0, displays_1.helpDisplay)();
+        else if (option == "help" || option == "ajuda") {
+            (0, displays_1.helpDisplay)(exports.gameLanguage);
         }
         else if (option == "ok" || option == "") {
             titleScreen();
@@ -50,7 +50,7 @@ exports.languageSelector = languageSelector;
 function titleScreen() {
     return __awaiter(this, void 0, void 0, function* () {
         yield (0, displays_1.languageDisplay)();
-        yield (0, displays_1.titleDisplay)();
+        yield (0, displays_1.titleDisplay)(exports.gameLanguage);
     });
 }
 exports.titleScreen = titleScreen;

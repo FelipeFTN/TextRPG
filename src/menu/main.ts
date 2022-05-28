@@ -7,8 +7,8 @@ export let gameLanguage: string = "";
 export async function titleScreenSelector(): Promise<void> {
     const option: any = await prompt();
 
-    if (option == "play") { startGame(); }
-    else if (option == "help") { helpDisplay(); }
+    if (option == "play" || option == "jogar") { startGame(); }
+    else if (option == "help" || option == "ajuda") { helpDisplay(gameLanguage); }
     else if (option == "ok" || option == "") { titleScreen(); }
     else { process.exit(1); }
 }
@@ -23,5 +23,5 @@ export async function languageSelector(): Promise<void> {
 
 export async function titleScreen(): Promise<void> { 
     await languageDisplay();
-    await titleDisplay();
+    await titleDisplay(gameLanguage);
 }

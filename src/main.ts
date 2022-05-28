@@ -2,11 +2,11 @@
 // No Name Yet :D
 
 import { AssignClass, Classes } from './classes/classes';
+import { titleScreen, gameLanguage } from './menu/main';
+import { CharacterNameDialog, CharacterClassDialog } from './dialogs/main';
 import { createCharacter } from './menu/displays';
 import { PlayerClass } from './classes/player';
-import { titleScreen } from './menu/main';
 import { prompt } from './utils/prompt';
-import { showMap } from './map/main';
 
 const player: PlayerClass = new PlayerClass();
 
@@ -14,12 +14,12 @@ titleScreen();
 
 export async function startGame(): Promise<void> {
 
-    const playerName: string = await prompt("Character's name: ");
+    const playerName: string = await prompt(CharacterNameDialog());
     player.setPlayerName(playerName.trim());
 
-    createCharacter();
-    let playerClass: string = (await prompt("Choose a class: ")).trim().toLowerCase();
-    while (!Classes.includes(playerClass.trim().toLowerCase())) { playerClass = (await prompt("Choose a class: ")).trim().toLowerCase(); }
+    createCharacter(gameLanguage);
+    let playerClass: string = (await prompt(CharacterClassDialog())).trim().toLowerCase();
+    while (!Classes.includes(playerClass.trim().toLowerCase())) { playerClass = (await prompt(CharacterClassDialog())).trim().toLowerCase(); }
     AssignClass(player, playerClass);
 
     console.log(`Hello ${player.getPlayerName()}, the ${player.getPlayerClass()}`);

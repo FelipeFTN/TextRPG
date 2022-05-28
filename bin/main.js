@@ -11,23 +11,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.startGame = exports.languageSelector = void 0;
+exports.startGame = void 0;
 const classes_1 = require("./classes/classes");
+const main_1 = require("./menu/main");
+const main_2 = require("./dialogs/main");
 const displays_1 = require("./menu/displays");
 const player_1 = require("./classes/player");
-const main_1 = require("./menu/main");
 const prompt_1 = require("./utils/prompt");
 const player = new player_1.PlayerClass();
 (0, main_1.titleScreen)();
-function languageSelector() {
-}
-exports.languageSelector = languageSelector;
 function startGame() {
     return __awaiter(this, void 0, void 0, function* () {
-        const playerName = yield (0, prompt_1.prompt)("Character's name: ");
+        const playerName = yield (0, prompt_1.prompt)((0, main_2.CharacterNameDialog)());
         player.setPlayerName(playerName.trim());
-        (0, displays_1.createCharacter)();
-        let playerClass = (yield (0, prompt_1.prompt)("Choose a class: ")).trim().toLowerCase();
+        (0, displays_1.createCharacter)(main_1.gameLanguage);
+        let playerClass = (yield (0, prompt_1.prompt)((0, main_2.CharacterClassDialog)())).trim().toLowerCase();
         while (!classes_1.Classes.includes(playerClass.trim().toLowerCase())) {
             playerClass = (yield (0, prompt_1.prompt)("Choose a class: ")).trim().toLowerCase();
         }
