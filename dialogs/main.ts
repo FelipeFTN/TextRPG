@@ -1,16 +1,16 @@
-import { gameLanguage } from '../menu/main'
+import { GameLanguage } from '../utils/globals';
 
 export function CharacterNameDialog(): string {
     const englishSpeech: string = "Character's name: ";
     const portugueseSpeech: string = "Nome do personagem: ";
 
-    if (gameLanguage == "english") { return englishSpeech; }
+    if (GameLanguage == "english") { return englishSpeech; }
     else { return portugueseSpeech; }
 }
 export function CharacterClassDialog(): string {
     const englishSpeech: string = "Choose a class: ";
     const portugueseSpeech: string = "escolha uma classe: ";
 
-    if (gameLanguage == "english") { return englishSpeech; }
+    if (GameLanguage == "english") { return englishSpeech; }
     else { return portugueseSpeech; }
 }

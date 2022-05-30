@@ -2,5 +2,25 @@
   "dependencies": {
     "@types/node": "^17.0.35",
     "typescript": "^4.6.4"
-  }
+  },
+  "name": "text-rpg",
+  "description": "A Simple Text RPG in Typescript",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/main.js",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeFTN/TextRPG.git"
+  },
+  "author": "FelipeFTN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FelipeFTN/TextRPG/issues"
+  },
+  "homepage": "https://github.com/FelipeFTN/TextRPG#readme"
 }

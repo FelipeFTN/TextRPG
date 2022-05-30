@@ -1,6 +1,7 @@
-import { titleScreenSelector, languageSelector } from "./main"
+import { TitleScreenSelector, LanguageSelector } from "./main"
+import { GameLanguage } from '../utils/globals';
 
-export async function languageDisplay(): Promise<void> {
+export async function LanguageDisplay(): Promise<void> {
     process.stdout.write('\u001B[2J\u001B[0;0f');
     console.log('################################');
     console.log('#            Language          #');
@@ -9,11 +10,11 @@ export async function languageDisplay(): Promise<void> {
     console.log('          - Portuguese -        ');
     console.log('                                ');
     console.log('    Copyright 2022 FelipeFTN    ');
-    await languageSelector();
+    await LanguageSelector();
 }
-export async function titleDisplay(language: string): Promise<void> {
+export async function TitleDisplay(): Promise<void> {
     process.stdout.write('\u001B[2J\u001B[0;0f');
-    if (language == "english") {
+    if (GameLanguage == "english") {
         console.log('################################');
         console.log('#    Welcome to the Text RPG   #');
         console.log('################################');
@@ -30,16 +31,16 @@ export async function titleDisplay(language: string): Promise<void> {
         console.log('            - Sair -            ');
         console.log('    Copyright 2022 FelipeFTN    ');
     }
-    await titleScreenSelector();
+    await TitleScreenSelector();
 }
-export async function helpDisplay(language: string): Promise<void> {
+export async function HelpDisplay(): Promise<void> {
     process.stdout.write('\u001B[2J\u001B[0;0f');
 
-    if (language == "english") {
+    if (GameLanguage == "english") {
         console.log('#################################');
         console.log('#    Welcome to the Text RPG    #');   
         console.log('#################################');
-        console.log('Use up, down, left, right to move');
+        console.log('Use up, down, left, right to Move');
         console.log('  Type your commands to do them  ');
         console.log(' Use "look" to inspect something ');
         console.log('     Good luck and have fun!     ');
@@ -61,11 +62,11 @@ export async function helpDisplay(language: string): Promise<void> {
         console.log('                                 ');
         console.log('    Copyright 2022 FelipeFTN     ');
     }
-    await titleScreenSelector();
+    await TitleScreenSelector();
 }
-export async function createCharacter(language: string): Promise<void> {
+export async function CreateCharacter(): Promise<void> {
     process.stdout.write('\u001B[2J\u001B[0;0f');
-    if (language == "english") {
+    if (GameLanguage == "english") {
         console.log('################################');
         console.log('          - Barbarian -         ');
         console.log('           - Assassin -         ');

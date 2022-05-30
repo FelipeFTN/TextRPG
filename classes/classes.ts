@@ -1,13 +1,13 @@
 import { PlayerClass } from './player';
 
 export function AssignClass(player: PlayerClass, playerClass: string): void {
-    if (playerClass == "barbarian" || playerClass == "barbaro") { player.setPlayerClass(new Barbarian); return; }
-    if (playerClass == "assassin" || playerClass == "assassino") { player.setPlayerClass(new Assassin); return; }
-    if (playerClass == "warrior" || playerClass == "guerreiro") { player.setPlayerClass(new Warrior); return; }
-    if (playerClass == "archer" || playerClass == "arqueiro") { player.setPlayerClass(new Archer); return; }
-    if (playerClass == "cleric" || playerClass == "clerigo") { player.setPlayerClass(new Cleric); return; }
-    if (playerClass == "thief" || playerClass == "ladrao") { player.setPlayerClass(new Thief); return; }
-    if (playerClass == "mage" || playerClass == "mago") { player.setPlayerClass(new Mage); return; }
+    if (playerClass == "barbarian" || playerClass == "barbaro") { player.SetPlayerClass(new Barbarian); return; }
+    if (playerClass == "assassin" || playerClass == "assassino") { player.SetPlayerClass(new Assassin); return; }
+    if (playerClass == "warrior" || playerClass == "guerreiro") { player.SetPlayerClass(new Warrior); return; }
+    if (playerClass == "archer" || playerClass == "arqueiro") { player.SetPlayerClass(new Archer); return; }
+    if (playerClass == "cleric" || playerClass == "clerigo") { player.SetPlayerClass(new Cleric); return; }
+    if (playerClass == "thief" || playerClass == "ladrao") { player.SetPlayerClass(new Thief); return; }
+    if (playerClass == "mage" || playerClass == "mago") { player.SetPlayerClass(new Mage); return; }
 }
 
 export const Classes: string[] = [

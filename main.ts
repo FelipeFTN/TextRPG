@@ -2,34 +2,34 @@
 // No Name Yet :D
 
 import { AssignClass, Classes } from './classes/classes';
-import { titleScreen, gameLanguage } from './menu/main';
+import { TitleScreen, gameLanguage } from './menu/main';
 import { CharacterNameDialog, CharacterClassDialog } from './dialogs/main';
-import { createCharacter } from './menu/displays';
+import { CreateCharacter } from './menu/displays';
 import { PlayerClass } from './classes/player';
-import { prompt } from './utils/prompt';
+import { Prompt } from './utils/Prompt';
 
 const player: PlayerClass = new PlayerClass();
 
-titleScreen();
+TitleScreen();
 
 export async function startGame(): Promise<void> {
 
-    const playerName: string = await prompt(CharacterNameDialog());
-    player.setPlayerName(playerName.trim());
+    const playerName: string = await Prompt(CharacterNameDialog());
+    player.SetPlayerName(playerName.trim());
 
-    createCharacter(gameLanguage);
-    let playerClass: string = (await prompt(CharacterClassDialog())).trim().toLowerCase();
-    while (!Classes.includes(playerClass.trim().toLowerCase())) { playerClass = (await prompt(CharacterClassDialog())).trim().toLowerCase(); }
+    CreateCharacter(gameLanguage);
+    let playerClass: string = (await Prompt(CharacterClassDialog())).trim().toLowerCase();
+    while (!Classes.includes(playerClass.trim().toLowerCase())) { playerClass = (await Prompt(CharacterClassDialog())).trim().toLowerCase(); }
     AssignClass(player, playerClass);
 
-    console.log(`Hello ${player.getPlayerName()}, the ${player.getPlayerClass()}`);
+    console.log(`Hello ${player.GetPlayerName()}, the ${player.GetPlayerClass()}`);
 
-    // const option: any = (await prompt("What would you like to do? ")).trim();
+    // const option: any = (await Prompt("What would you like to do? ")).trim();
 
-    // if (["move", "go", "travel", "walk"].includes(option)) { player.move(option); }
-    // else if (["examine", "inspect", " interact", "look"].includes(option)) { player.interact(option); }
+    // if (["Move", "go", "travel", "walk"].includes(option)) { player.Move(option); }
+    // else if (["examine", "inspect", " Interact", "look"].includes(option)) { player.Interact(option); }
     // else if (["quit", "exit", "leave", "left"].includes(option)) { process.exit(1); }
-    // else { await prompt("What would you like to do?? "); }
+    // else { await Prompt("What would you like to do?? "); }
 
     process.exit(1);
 }

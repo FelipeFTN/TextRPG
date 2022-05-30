@@ -19,21 +19,21 @@ export class PlayerClass {
         this.position = "b2";
     }
 
-    public getPlayerName(): string { return this.name; }
-    public getPlayerClass(): string { return this.class; }
-    public getPlayerLocation(): string { return this.location; }
-    public getPlayerPosition(): string { return this.position; }
-    public getPlayerCombatInfo(): any { return { "hp": this.hp, "mp": this.mp, "attack": this.attack }; }
+    public GetPlayerName(): string { return this.name; }
+    public GetPlayerClass(): string { return this.class; }
+    public GetPlayerLocation(): string { return this.location; }
+    public GetPlayerPosition(): string { return this.position; }
+    public GetPlayerCombatInfo(): any { return { "hp": this.hp, "mp": this.mp, "attack": this.attack }; }
 
-    public setPlayerName(value: string): void { this.name = value; }
-    public setPlayerClass(value: any): void {
+    public SetPlayerName(value: string): void { this.name = value; }
+    public SetPlayerClass(value: any): void {
         this.class = value.name;
         this.hp = value.hp;
         this.mp = value.mp;
         this.attack = value.attack;
     }
 
-    public move(value: string): void { }
-    public interact(value: string): void { }
+    public Move(value: string): void { }
+    public Interact(value: string): void { }
     
 }
