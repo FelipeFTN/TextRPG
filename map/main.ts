@@ -1,5 +1,5 @@
-import mapZones from './map'
 import { PlayerClass } from '../classes/player'
+import mapZones from './map'
 
 export function ShowMap(player: PlayerClass): void {
     console.log('\n' + ("#".repeat(1.9 * player.GetPlayerLocation().length)))
