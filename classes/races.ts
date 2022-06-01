@@ -1,10 +1,10 @@
 import { PlayerClass } from './player';
 
 export function AssignRace(player: PlayerClass, playerRace: string): void { 
-    if (playerRace == "human" || playerRace == "humano") { player.SetPlayerRace(playerRace); return; }
-    if (playerRace == "orc" || playerRace == "orc") { player.SetPlayerRace(playerRace); return; }
-    if (playerRace == "elve" || playerRace == "elfo") { player.SetPlayerRace(playerRace); return; }
-    if (playerRace == "undead" || playerRace == "morto-vivo") { player.SetPlayerRace(playerRace); return; }
+    if (playerRace == "human" || playerRace == "humano") { player.SetPlayerRace({ value: playerRace }); return; }
+    if (playerRace == "orc" || playerRace == "orc") { player.SetPlayerRace({ value: playerRace }); return; }
+    if (playerRace == "elve" || playerRace == "elfo") { player.SetPlayerRace({ value: playerRace }); return; }
+    if (playerRace == "undead" || playerRace == "morto-vivo") { player.SetPlayerRace({ value: playerRace }); return; }
 }
 export const Races: string[] = [
     "human",

@@ -29,12 +29,18 @@ export class PlayerClass {
     public GetPlayerCombatInfo(): any { return { "hp": this.hp, "mp": this.mp, "attack": this.attack }; }
 
     public SetPlayerName(value: string): void { this.name = value; }
-    public SetPlayerRace(value: string): void { this.race = value; }
+    public SetPlayerRace(value: any): void {
+        this.class += value.name;
+        this.hp += value.hp;
+        this.mp += value.mp;
+        this.attack += value.attack;
+
+    }
     public SetPlayerClass(value: any): void {
-        this.class = value.name;
-        this.hp = value.hp;
-        this.mp = value.mp;
-        this.attack = value.attack;
+        this.class += value.name;
+        this.hp += value.hp;
+        this.mp += value.mp;
+        this.attack += value.attack;
     }
 
     public Move(value: string): void { }

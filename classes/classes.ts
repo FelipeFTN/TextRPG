@@ -35,9 +35,9 @@ export class Barbarian {
 
     constructor() {
         this.name = "barbarian";
-        this.hp = 150;
+        this.hp = 50;
         this.mp = 10;
-        this.attack = 135;
+        this.attack = 35;
     }
 }
 export class Assassin {
@@ -50,7 +50,7 @@ export class Assassin {
         this.name = "assassin";
         this.hp = 50;
         this.mp = 30;
-        this.attack = 140;
+        this.attack = 40;
     }
 }
 export class Warrior {
@@ -63,7 +63,7 @@ export class Warrior {
         this.name = "warrior";
         this.hp = 50;
         this.mp = 30;
-        this.attack = 135;
+        this.attack = 35;
     }
 }
 export class Archer {
@@ -76,7 +76,7 @@ export class Archer {
         this.name = "archer";
         this.hp = 50;
         this.mp = 30;
-        this.attack = 135;
+        this.attack = 35;
     }
 }
 export class Cleric {
@@ -89,7 +89,7 @@ export class Cleric {
         this.name = "cleric";
         this.hp = 50;
         this.mp = 30;
-        this.attack = 135;
+        this.attack = 35;
     }
 }
 export class Thief {
@@ -102,7 +102,7 @@ export class Thief {
         this.name = "thief";
         this.hp = 50;
         this.mp = 30;
-        this.attack = 135;
+        this.attack = 35;
     }
 }
 export class Mage {
@@ -115,6 +115,6 @@ export class Mage {
         this.name = "mage";
         this.hp = 50;
         this.mp = 30;
-        this.attack = 135;
+        this.attack = 35;
     }
 }
