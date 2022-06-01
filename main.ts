@@ -3,7 +3,7 @@
 
 import { AssignClass, Classes } from './classes/classes';
 import { TitleScreen } from './menu/main';
-import { CharacterNameDialog, CharacterClassDialog } from './dialogs/main';
+import { CharacterNameDialog, CharacterClassDialog, Introduction } from './dialogs/main';
 import { CreateCharacter } from './menu/displays';
 import { PlayerClass } from './classes/player';
 import { Prompt } from './utils/prompt';
@@ -22,7 +22,7 @@ export async function startGame(): Promise<void> {
     while (!Classes.includes(playerClass.trim().toLowerCase())) { playerClass = (await Prompt(CharacterClassDialog())).trim().toLowerCase(); }
     AssignClass(player, playerClass);
 
-    console.log(`Hello ${player.GetPlayerName()}, the ${player.GetPlayerClass()}`);
+    Introduction();
 
     // const option: any = (await Prompt("What would you like to do? ")).trim();
 
