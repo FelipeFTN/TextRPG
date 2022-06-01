@@ -5,4 +5,5 @@ export async function Typing(value: string): Promise<void> {
         process.stdout.write(value.charAt(i));
         Sleep(65);
     }
+    process.stdout.write('\n');
 }

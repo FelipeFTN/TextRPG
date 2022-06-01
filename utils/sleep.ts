@@ -1,4 +1,4 @@
 export function Sleep(delay: number) {
-    var start = new Date().getTime();
+    let start: number = new Date().getTime();
     while (new Date().getTime() < start + delay);
 }
