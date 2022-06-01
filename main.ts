@@ -2,10 +2,11 @@
 // No Name Yet :D
 
 import { AssignClass, Classes } from './classes/classes';
-import { CreateCharacter } from './menu/displays';
+import { AssignRace, Races } from './classes/races';
 import { PlayerClass } from './classes/player';
+import * as Displays from './menu/displays';
 import { TitleScreen } from './menu/main';
-import * as Dialog from './dialogs/main';
+import * as Dialogs from './dialogs/main';
 import { Prompt } from './utils/prompt';
 
 const player: PlayerClass = new PlayerClass();
@@ -14,15 +15,22 @@ TitleScreen();
 
 export async function startGame(): Promise<void> {
 
-    const playerName: string = await Prompt(Dialog.CreateCharacter(0));
+    const playerName: string = await Prompt(Dialogs.CreateCharacter(0));
     player.SetPlayerName(playerName.trim());
 
-    CreateCharacter();
-    let playerClass: string = (await Prompt(Dialog.CreateCharacter(1)));
-    while (!Classes.includes(playerClass.trim().toLowerCase())) { playerClass = (await Prompt(Dialog.CreateCharacter(1))); }
+    Displays.CreateCharacterRaces();
+    let playerRace: string = (await Prompt(Dialogs.CreateCharacter(1)));
+    while (!Races.includes(playerRace.trim().toLowerCase())) { playerRace = (await Prompt(Dialogs.CreateCharacter(1))); }
+    AssignRace(player, playerRace);
+
+    Displays.CreateCharacterClasses();
+    let playerClass: string = (await Prompt(Dialogs.CreateCharacter(2)));
+    while (!Classes.includes(playerClass.trim().toLowerCase())) { playerClass = (await Prompt(Dialogs.CreateCharacter(1))); }
     AssignClass(player, playerClass);
 
-    Dialog.Introduction();
+    process.stdout.write('\u001B[2J\u001B[0;0f');
+    Dialogs.Introduction();
+
 
     // const option: any = (await Prompt("What would you like to do? ")).trim();
 

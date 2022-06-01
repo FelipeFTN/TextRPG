@@ -3,6 +3,7 @@ export class PlayerClass {
     private hp: number;
     private mp: number;
     private attack: number;
+    private race: string;
     private class: string;
     private status: string[];
     private location: string;
@@ -13,6 +14,7 @@ export class PlayerClass {
         this.hp = 0;
         this.mp = 0;
         this.attack = 0;
+        this.race = "";
         this.class = "";
         this.status = [];
         this.location = "start"
@@ -20,12 +22,14 @@ export class PlayerClass {
     }
 
     public GetPlayerName(): string { return this.name; }
+    public GetPlayerRace(): string { return this.race; }
     public GetPlayerClass(): string { return this.class; }
     public GetPlayerLocation(): string { return this.location; }
     public GetPlayerPosition(): string { return this.position; }
     public GetPlayerCombatInfo(): any { return { "hp": this.hp, "mp": this.mp, "attack": this.attack }; }
 
     public SetPlayerName(value: string): void { this.name = value; }
+    public SetPlayerRace(value: string): void { this.race = value; }
     public SetPlayerClass(value: any): void {
         this.class = value.name;
         this.hp = value.hp;

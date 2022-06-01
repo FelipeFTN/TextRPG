@@ -64,7 +64,7 @@ export async function HelpDisplay(): Promise<void> {
     }
     await TitleScreenSelector();
 }
-export async function CreateCharacter(): Promise<void> {
+export async function CreateCharacterClasses(): Promise<void> {
     process.stdout.write('\u001B[2J\u001B[0;0f');
     if (GameLanguage == "english") {
         console.log('################################');
@@ -84,5 +84,21 @@ export async function CreateCharacter(): Promise<void> {
         console.log('           - Barbaro -          ');
         console.log('           - Ladrao -           ');
         console.log('            - Mago -            ');
+    }
+}
+export async function CreateCharacterRaces(): Promise<void> {
+    process.stdout.write('\u001B[2J\u001B[0;0f');
+    if (GameLanguage == "english") {
+        console.log('################################');
+        console.log('           - Human -             ');
+        console.log('            - Orc -              ');
+        console.log('            - Elve -             ');
+        console.log('           - Undead -           ');
+    } else {
+        console.log('################################');
+        console.log('         - Morto vivo -         ');
+        console.log('           - Humano -           ');
+        console.log('            - Elfo -            ');
+        console.log('            - Orc -             ');
     }
 }

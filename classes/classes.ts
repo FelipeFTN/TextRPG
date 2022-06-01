@@ -24,7 +24,7 @@ export const Classes: string[] = [
     "arqueiro",
     "clerigo",
     "ladrao",
-    "mago",
+    "mago"
 ]
 
 export class Barbarian {

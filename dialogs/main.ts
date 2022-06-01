@@ -5,10 +5,12 @@ export function CreateCharacter(value: number): any {
     const speech: any = {
         "english": [
             "Character's name: ",
+            "Choose a race: ",
             "Choose a class: "
         ],
         "portuguese": [
             "Nome do personagem: ",
+            "Escolha uma raça: ",
             "escolha uma classe: "
         ]
     };
