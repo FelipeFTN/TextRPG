@@ -18,9 +18,16 @@ export function CreateCharacter(value: number): any {
 }
 
 export function Introduction(): void {
-    const englishSpeech: string = "The day before your execution you are summoned by the King of Lambridge.";
-    const portugueseSpeech: string = "Um dia antes de sua execução você é convocado pelo rei de Lambridge.";
+    const speech: any = {
+        "english": [
+            "The day before your execution you are summoned by the King of Lambridge.",
+        ],
+        "portuguese": [
+            "Um dia antes de sua execução você é convocado pelo rei de Lambridge.",
+        ]
+    };
 
-    if (GameLanguage == "english") { Typing(englishSpeech); }
-    else { Typing(portugueseSpeech); }
+
+    if (GameLanguage == "english") { Typing(speech.english[0]); }
+    else { Typing(speech.portuguese[0]); }
 }
