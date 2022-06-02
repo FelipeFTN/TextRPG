@@ -1,7 +1,7 @@
-import { TitleScreenSelector, LanguageSelector } from "./main"
+import { TitleSelector, LanguageSelector } from "./main"
 import { GameLanguage } from '../utils/globals';
 
-export async function LanguageDisplay(): Promise<void> {
+export function LanguageDisplay(): void {
     process.stdout.write('\u001B[2J\u001B[0;0f');
     console.log('################################');
     console.log('#            Language          #');
@@ -10,9 +10,8 @@ export async function LanguageDisplay(): Promise<void> {
     console.log('          - Portuguese -        ');
     console.log('                                ');
     console.log('    Copyright 2022 FelipeFTN    ');
-    await LanguageSelector();
 }
-export async function TitleDisplay(): Promise<void> {
+export function TitleDisplay(): void {
     process.stdout.write('\u001B[2J\u001B[0;0f');
     if (GameLanguage == "english") {
         console.log('################################');
@@ -31,7 +30,6 @@ export async function TitleDisplay(): Promise<void> {
         console.log('            - Sair -            ');
         console.log('    Copyright 2022 FelipeFTN    ');
     }
-    await TitleScreenSelector();
 }
 export async function HelpDisplay(): Promise<void> {
     process.stdout.write('\u001B[2J\u001B[0;0f');
@@ -62,7 +60,6 @@ export async function HelpDisplay(): Promise<void> {
         console.log('                                 ');
         console.log('    Copyright 2022 FelipeFTN     ');
     }
-    await TitleScreenSelector();
 }
 export async function CreateCharacterClasses(): Promise<void> {
     process.stdout.write('\u001B[2J\u001B[0;0f');

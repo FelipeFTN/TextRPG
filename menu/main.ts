@@ -1,18 +1,27 @@
 import { TitleDisplay, LanguageDisplay, HelpDisplay } from './displays';
 import { SetGameLanguage } from '../utils/globals';
 import { Prompt } from '../utils/prompt';
-import { startGame } from '../main';
 
-export async function TitleScreenSelector(): Promise<void> {
-    const option: any = await Prompt();
+export async function TitleSelector(): Promise<void> {
+    TitleDisplay();
 
-    if (option == "play" || option == "jogar") { startGame(); }
-    else if (option == "help" || option == "ajuda") { HelpDisplay(); }
-    else if (option == "ok" || option == "") { TitleDisplay(); }
+    const option: any = (await Prompt()).trim().toLowerCase();
+
+    if (option == "play" || option == "jogar") { return; }
+    else if (option == "help" || option == "ajuda") { await HelpSelector(); }
+    else { process.exit(1); }
+}
+export async function HelpSelector(): Promise<void> {
+    HelpDisplay();
+
+    const option: any = (await Prompt()).trim().toLowerCase();
+
+    if (option || option == "") { TitleSelector(); }
     else { process.exit(1); }
 }
 
 export async function LanguageSelector(): Promise<void> {
+    LanguageDisplay();
     const option: any = (await Prompt()).trim().toLowerCase();
 
     if (["english", "en", "ingles", "inglês"].includes(option)) { SetGameLanguage("english"); }
@@ -21,6 +30,6 @@ export async function LanguageSelector(): Promise<void> {
 }
 
 export async function TitleScreen(): Promise<void> { 
-    await LanguageDisplay();
-    await TitleDisplay();
+    await LanguageSelector();
+    await TitleSelector();
 }

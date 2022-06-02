@@ -8,12 +8,15 @@ export function AssignRace(player: PlayerClass, playerRace: string): void {
 }
 export const Races: string[] = [
     "human",
-    "orcs",
+    "orc",
     "elves",
+    "elve",
+    "elv",
     "undead",
     "humano",
     "orcs",
     "elfos",
+    "elfo",
     "morto-vivo",
     "morto vivo",
     "morto"

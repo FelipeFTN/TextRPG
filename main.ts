@@ -11,9 +11,8 @@ import { Prompt } from './utils/prompt';
 
 const player: PlayerClass = new PlayerClass();
 
-TitleScreen();
-
-export async function startGame(): Promise<void> {
+export async function StartGame(): Promise<void> {
+    await TitleScreen();
 
     const playerName: string = await Prompt(Dialogs.CreateCharacter(0));
     player.SetPlayerName(playerName.trim());
@@ -31,7 +30,6 @@ export async function startGame(): Promise<void> {
     process.stdout.write('\u001B[2J\u001B[0;0f');
     Dialogs.Introduction();
 
-
     // const option: any = (await Prompt("What would you like to do? ")).trim();
 
     // if (["Move", "go", "travel", "walk"].includes(option)) { player.Move(option); }
@@ -41,3 +39,5 @@ export async function startGame(): Promise<void> {
 
     process.exit(1);
 }
+
+StartGame();
