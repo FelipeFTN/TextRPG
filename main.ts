@@ -29,6 +29,7 @@ export async function StartGame(): Promise<void> {
 
     process.stdout.write('\u001B[2J\u001B[0;0f');
     Dialogs.Introduction();
+    Dialogs.Prologue();
 
     // const option: any = (await Prompt("What would you like to do? ")).trim();
 
