@@ -1,13 +1,17 @@
 {
   "dependencies": {
     "@types/node": "^17.0.35",
+    "socket.io": "^4.5.2",
     "typescript": "^4.6.4"
   },
   "name": "text-rpg",
   "description": "A Simple Text RPG in Typescript",
   "version": "1.0.0",
   "main": "dist/main.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "express": "^4.18.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node ./dist/main.js",

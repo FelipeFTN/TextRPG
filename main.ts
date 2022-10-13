@@ -40,5 +40,3 @@ export async function StartGame(): Promise<void> {
 
     process.exit(1);
 }
-
-StartGame();
